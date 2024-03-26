@@ -1,1 +1,11 @@
 # Imputation Missing Values in Time Series with LSTM
+
+## Introduction 
+
+The rapid increase in global energy consumption has raised significant concerns regarding supply issues, depletion of energy resources, and severe environmental impacts, indicating an increase in energy consumption demand. This necessitates better management of energy resources. To effectively address these challenges, it is imperative to accurately estimate electric load demand, which requires an analysis of energy consumption patterns.
+
+Historical energy consumption data contains observations of multiple variables over time. These patterns may be influenced by factors such as time of day, seasons, special events (holidays, workdays, etc.), and weather conditions. However, this data may contain missing values due to various reasons such as sensor failures, transmission issues, or measurement errors. These gaps in time series data can compromise the quality of analyses and forecasts.
+
+Imputing missing values in time series data poses a significant challenge, for which various methods exist. Each method has its pros and cons. Some basic models may provide quick and easy results but at the expense of less reliable prediction. On the other hand, more complex approaches offer better results but require higher computational resources and longer execution time. In time series, recurrent models can capture temporal patterns and dependencies over time. When applied to imputation, the aim is to preserve the temporal structure and consider relationships between variables.
+
+In this thesis, we address the challenge of imputing missing values in time series by developing and validating a model based on Long Short-Term Memory (LSTM) Neural Networks. To evaluate the model's capability, we will artificially insert 50% empty values into a complete dataset. Subsequently, the LSTM model will be trained using this modified dataset with the aim of imputing the data by predicting the missing values. The effectiveness of the model will be evaluated by comparing the results obtained with those generated using basic imputation techniques, such as forward filling, with particular emphasis on the accuracy of the time series prediction for the imputed values.
