@@ -28,23 +28,21 @@ Ltotal = Ltotal_{approx} + λ_{target} \cdot Ltotal_{target}
 
  
 Where Ltotal_{\text{approx}} is the total approximation loss, Ltotal_{\text{target}} is the total task-related loss, and λ_{\text{target}} is a coefficient that weights the importance of the task-related loss. This loss function is optimized using the Back Propagation Through Time (BPTT) algorithm.
-## Results 
-Hyperparameters
-learning_rate = 0.001
-l2_penalty = 0.01
-batch_size = 256
+## Experimentation and Results
+### Hyperparameters
+learning_rate = 0.01
+batch_size = 4
+hidden_size = 128
 epochs = 150
+evaluation_metric = MSE
+### Dataset
+The dataset used is related to the energy consumption of three different distribution networks in the city of Tetouan, located in northern Morocco. The energy consumption measured in these 3 networks spans the 12 months of the year 2017 with measurements taken every 10 minutes.
+#### Preprocessing
+For data preprocessing, the MinMaxScaler scaler is used to compute and store the minimum and maximum values of each consumption zone in the dataset.
+#### Generating empty values
+Since the data is complete, missing values are artificially generated in 10%, 30%, 50%, 70%, and 90% of the data. These missing values are masked with a value of -1.0 to be able to identify them and not affect the model with NaN values. Table 4.2 shows the distribution of the dataset with the generated missing values.
+#### Preprocessing 2
+Since this dataset contains missing values masked with -1.0, first these -1.0 values are replaced with NaN. Subsequently, the normalizer previously fitted to the complete dataset is applied. Finally, the NaN values are replaced again with -1.0.
 
-### Imputation in lights
-- MSE: 0.7
 
-![image](https://github.com/gchipanap/Imputation_Missing_Values_In_Time_Series_With_LSTM_/assets/64268942/14ad81e6-d459-4a6b-8aa3-e777274eaf12)
-
-
-### Imputation y Appliances
-- MSE: 0.87
-![image](https://github.com/gchipanap/Imputation_Missing_Values_In_Time_Series_With_LSTM_/assets/64268942/592de4ff-a8e4-4cb0-9f96-1c27dd685647)
-
-## Epochs vs Loss
-![image](https://github.com/gchipanap/Imputation_Missing_Values_In_Time_Series_With_LSTM_/assets/64268942/b7afd521-cb6d-4695-959c-f66495af595e)
 
