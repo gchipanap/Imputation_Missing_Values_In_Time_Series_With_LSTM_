@@ -44,5 +44,9 @@ Since the data is complete, missing values are artificially generated in 10%, 30
 #### Preprocessing 2
 Since this dataset contains missing values masked with -1.0, first these -1.0 values are replaced with NaN. Subsequently, the normalizer previously fitted to the complete dataset is applied. Finally, the NaN values are replaced again with -1.0.
 
+Imputation by the LSTM model on the 3 time series contained in the dataset.
 
+Below are comparison graphs of the models on the 3 different time series corresponding to the energy consumption of 3 zones. Figure 5.5 shows the comparison of MSE by the LSTM on the 3 consumption zones of the dataset used. It is observed that the highest MSE occurs over zone 1, which has the most stable data sampling, with occasional peaks but no spikes at any specific station. Zone 3 has lower MSE and exhibits more peaks and dips.
 
+Furthermore, it is observed that in Zone 1, the difference in MSE between the missing value rates of 70% and 90% is the largest. In Zone 1, with a missing value rate of 70%, the MSE is 1.19, and with a missing value rate of 90%, it is 1.96. In Zone 3, there is less variability between the MSE of missing value imputation on the dataset with all missing value rates considered.
+![Imagen](https://github.com/gchipanap/Imputation_Missing_Values_In_Time_Series_With_LSTM_/blob/main/results/output.png)
